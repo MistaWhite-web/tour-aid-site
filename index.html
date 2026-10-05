@@ -61,15 +61,7 @@
     padding: 48px max(16px, env(safe-area-inset-left)) 32px;
     text-align: center;
   }
-  /* the logo stands in a pool of light, so the full-color mark keeps its teal detail */
-  .spot { position: relative; display: grid; place-items: center; width: clamp(220px, 38vw, 300px); aspect-ratio: 1; margin-bottom: -28px; }
-  .spot::before {
-    content: ""; position: absolute; inset: 0; border-radius: 50%;
-    background: radial-gradient(circle at 50% 48%, #F6FAF7 0%, #F6FAF7 46%, rgba(217,240,227,.85) 56%, rgba(129,205,166,.22) 66%, rgba(129,205,166,0) 71%);
-    animation: glow 7s ease-in-out infinite;
-  }
-  @keyframes glow { 0%,100% { transform: scale(1) } 50% { transform: scale(1.025) } }
-  .mark { position: relative; width: 56%; height: auto; display: block; }
+  .mark { width: clamp(140px, 24vw, 220px); height: auto; display: block; }
 
   .status {
     display: inline-flex; align-items: center; gap: 10px;
@@ -110,7 +102,7 @@
   footer span + span::before { content: "·"; margin-right: 16px; opacity: .6; }
 
   @media (prefers-reduced-motion: reduce) {
-    .light, .status i, .spot::before { animation: none; }
+    .light, .status i { animation: none; }
     .meter b { animation: none; transform: scaleY(var(--p, .6)); }
   }
 </style>
@@ -119,7 +111,7 @@
   <div class="light" aria-hidden="true"></div>
 
   <main>
-    <div class="spot"><img class="mark" src="assets/touraid-mark.svg" alt="Tour-Aid" width="632" height="694"></div>
+    <img class="mark" src="assets/touraid-mark-reversed.svg" alt="Tour-Aid" width="632" height="694">
     <p class="status"><i aria-hidden="true"></i>Soundcheck in progress</p>
     <h1>Check, check.<br><span>One, two.</span></h1>
     <p class="lede"><strong>Tour-Aid</strong> is setting up the stage. The full site is on its way.</p>
